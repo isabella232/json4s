@@ -3,7 +3,7 @@ import Keys._
 import xml.Group
 //import sbtscalashim.Plugin._
 import sbtbuildinfo.Plugin._
-import com.typesafe.sbt.SbtStartScript
+//import com.typesafe.sbt.SbtStartScript
 
 
 object build extends Build {
@@ -132,7 +132,7 @@ object build extends Build {
   lazy val examples = Project(
      id = "json4s-examples",
      base = file("examples"),
-     settings = json4sSettings ++ SbtStartScript.startScriptForClassesSettings ++ Seq(
+     settings = json4sSettings ++ Seq(
        libraryDependencies += "net.databinder.dispatch" %% "dispatch-core" % "0.11.0",
        libraryDependencies += jacksonScala
      )
@@ -181,7 +181,7 @@ object build extends Build {
   lazy val benchmark = Project(
     id = "json4s-benchmark",
     base = file("benchmark"),
-    settings = json4sSettings ++ SbtStartScript.startScriptForClassesSettings ++ Seq(
+    settings = json4sSettings ++ Seq(
       cancelable := true,
       libraryDependencies ++= Seq(
         "com.google.code.java-allocation-instrumenter" % "java-allocation-instrumenter" % "2.0",
